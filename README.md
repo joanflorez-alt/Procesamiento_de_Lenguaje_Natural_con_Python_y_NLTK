@@ -1,3 +1,78 @@
+para buscar: cmd  +  F
+para visualizar: cmd + altizq + v
+para guardar: cmd + s
+
+## Git Hub
+
+Pasos para conectar tu proyecto a GitHub
+
+1. Crea el repositorio en GitHub
+Ve a github.com
+
+Inicia sesión.
+
+Haz clic en "New" o "Nuevo repositorio"
+
+Asigna un nombre, por ejemplo: Procesamiento_de_Lenguaje_Natural_con_Python_y_NLTK
+
+No marques la opción de crear README si ya tienes archivos locales.
+
+Crea el repositorio y copia la URL SSH.
+
+2. Desde la terminal: entra a la carpeta del proyecto local
+```sh
+cd ruta/a/tu/proyecto
+```
+
+3. Inicializa Git
+```sh
+git init
+```
+
+4. Agrega todos los archivos al área de preparación
+```sh
+git add .
+```
+
+5. Haz el primer commit
+```sh
+git commit -m "primero 28_6_25"
+```
+
+6. Conecta tu proyecto local con el repositorio de GitHub
+Asegúrate de copiar tu enlace SSH correcto. Por ejemplo:
+
+```sh
+git remote add origin git@github.com:joanflorez-alt/Procesamiento_de_Lenguaje_Natural_con_Python_y_NLTK.git
+```
+
+7. Envía tu proyecto a GitHub (rama main)
+```sh
+git push -u origin main
+```
+
+# Próximos pasos útiles
+
+🔸 Para subir futuros cambios:
+```sh
+git add .
+git commit -m "Mi nuevo cambio"
+git push
+```
+
+🔸 Para ver el estado actual del repositorio:
+sh
+Copy
+Edit
+git status
+🔸 Para clonar el repositorio en otro equipo:
+sh
+Copy
+Edit
+git clone git@github.com:joanflorez-alt/Procesamiento_de_Lenguaje_Natural_con_Python_y_NLTK.git
+
+
+
 ## Procesamiento de Lenguaje Natural con Python y NLTK
 
 
