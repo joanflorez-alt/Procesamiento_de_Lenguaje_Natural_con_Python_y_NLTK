@@ -136,3 +136,51 @@ NLP Industrial: Cómo escalar modelos a aplicaciones reales usando spaCy.
 Bloque avanzado: Combinando NLTK y spaCy para abordar conceptos más complejos en PLN.
 
 Con este camino estructurado, estarás preparado para sumergirte en el mundo del PLN y desarrollar aplicaciones prácticas que aprovechen la capacidad creciente de las máquinas para entender el lenguaje humano. No dudes en dejar tus comentarios sobre qué te entusiasma más de este curso y los proyectos que planeas crear.
+
+![name](imagenes/image_2.png)
+
+
+# Librerias
+![name](imagenes/image_3.png)
+
+## CONCEPTOS BÁSICOS NLP
+
+¿Cuáles son los fundamentos del procesamiento del lenguaje natural?
+El procesamiento del lenguaje natural (PLN) es un campo fascinante que combina la lingüística y la inteligencia artificial para permitir que las máquinas entiendan, interpreten y respondan al lenguaje humano de manera efectiva. En esta introducción, abordaremos los conceptos básicos y la diferencia entre el PLN y la lingüística computacional, así como algunos procesos clave involucrados en la normalización de texto.
+
+¿Cuál es la diferencia entre procesamiento del lenguaje natural y lingüística computacional?
+Aunque la meta de ambas áreas es comprender el lenguaje, sus enfoques difieren:
+
+Procesamiento del lenguaje natural (PLN): Se centra en aplicaciones prácticas y está orientado hacia la ingeniería. Busca desarrollar sistemas que puedan comprender y generar lenguaje humano.
+Lingüística computacional: Su enfoque es más científico, intentando resolver interrogantes del lenguaje mediante el estudio de cómo los humanos procesan y computan el lenguaje de manera innata.
+¿Cómo se crean modelos en lingüística computacional?
+La lingüística computacional crea modelos a partir de dos enfoques principales:
+
+Basado en conocimiento: Se centra en reglas y principios lingüísticos.
+Basado en datos: Utiliza aprendizaje automático (machine learning) alimentado por grandes volúmenes de datos, recurriendo al análisis estadístico.
+¿Qué es la normalización de texto?
+La normalización de texto es un proceso estándar en el procesamiento de lenguaje que incluye varias etapas de limpieza y transformación de texto para preparar datos textuales para el análisis.
+
+¿En qué consiste la tokenización?
+La tokenización divide un texto en unidades mínimas, comúnmente conocidas como palabras o tokens. Por ejemplo, la frase "Mi hermano dejó de comer" se tokeniza en las siguientes palabras: "Mi", "hermano", "dejó", "de", "comer".
+
+¿Qué es la lematización?
+La lematización transforma las palabras a su forma raíz o lema. Esto es especialmente útil para los verbos. En el ejemplo anterior, "dejó" se lematiza a "dejar".
+
+¿Cómo se segmenta el texto en frases?
+La segmentación en frases intenta dividir el texto en oraciones utilizando la puntuación. Sin embargo, este proceso puede ser complicado, ya que las reglas gramaticales no siempre son consistentes.
+
+¿Qué es un corpus y cómo se diferencia de un corpora?
+En la investigación del lenguaje, es importante conocer:
+
+Corpus: Una colección de textos utilizada para analizar datos lingüísticos. Proporciona el material necesario para construir modelos estadísticos.
+Corpora: Plural de corpus, es decir, una colección de colecciones de texto.
+Estos conceptos son fundamentales para entender cómo se estructuran y utilizan los datos en el PLN.
+
+En esta etapa inicial del procesamiento del lenguaje, es esencial dominar estos fundamentos, ya que sientan la base para aplicar técnicas más avanzadas de PLN. ¡Te animamos a seguir explorando y sumergiéndote en el apasionante mundo del procesamiento del lenguaje natural!
+
+![name](imagenes/image_4.png)
+
+
+![name](imagenes/image_5.png)
+
