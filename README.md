@@ -184,3 +184,194 @@ En esta etapa inicial del procesamiento del lenguaje, es esencial dominar estos 
 
 ![name](imagenes/image_5.png)
 
+## Procesamiento de Lenguaje Natural con Python en Google Colab
+
+La libreria NLTK ya trate texto incorporado corpus corpora
+
+https://colab.research.google.com/drive/1NbB9Gw73N6t1gS_CDp1vhcJMNsDm1yZ8?usp=sharing
+
+
+usaremos una base de datos en especial: 
+
+nltk.download("cess_esp")
+
+
+Ver:
+
+https://docs.python.org/es/3.13/library/re.html
+
+
+# Hasta el momento ya tomamos un corpus para analizar
+
+## Expresiones Regulares en Python: Patrones de Búsqueda Avanzados
+
+¿Cómo usar expresiones regulares en NLTK para analizar un corpus?
+En el fascinante mundo de la lingüística computacional, las expresiones regulares juegan un papel crucial para realizar búsquedas avanzadas en grandes cantidades de texto, como un corpus. Si estás interesado en descubrir cómo construir patrones de búsqueda efectivos, estás en el lugar adecuado. En esta guía, desentrañamos el uso de las expresiones regulares con la librería NLTK (Natural Language Toolkit) y Python, desde lo básico hasta los patrones más sofisticados.
+
+¿Qué es una expresión regular?
+Las expresiones regulares son secuencias de caracteres que forman un patrón de búsqueda. Utilizadas en el procesamiento de texto, permiten navegar y filtrar información dentro de cadenas de texto para encontrar coincidencias específicas. Python cuenta con una poderosa librería llamada re que facilita su incorporación.
+
+¿Cómo construir un arreglo filtrando palabras con expresiones regulares?
+Comenzamos con la creación de un arreglo utilizando una expresión regular simple. A continuación, se muestra cómo definir patrones de búsqueda básicos y avanzados.
+
+import re
+
+# Ejemplo básico: Buscar palabras que contengan 'es'
+AR = [w for w in flatten if re.search(r'es', w)]
+En este fragmento de código, utilizamos la función re.search() de la librería de expresiones regulares de Python, especificando un patrón y evaluando cada palabra en la lista flatten. Si el patrón 'es' se encuentra en una palabra, esta se añade al nuevo arreglo AR.
+
+¿Cómo redefinir patrones de búsqueda utilizando metacaracteres?
+Los metacaracteres enriquecen las búsquedas con expresiones regulares al permitir una mayor especificidad, como buscar coincidencias al principio o al final de las palabras.
+
+$: Marca el final de una cadena.
+
+# Ejemplo: Solo palabras que terminan en 'es'
+AR = [w for w in flatten if re.search(r'es$', w)]
+^: Marca el inicio de una cadena.
+
+# Ejemplo: Solo palabras que empiezan con 'es'
+AR = [w for w in flatten if re.search(r'^es', w)]
+¿Cómo utilizar rangos en las expresiones regulares?
+Los rangos permiten definir un conjunto de caracteres que pueden ocupar una posición específica dentro de una cadena de texto:
+
+# Ejemplo: Buscar palabras que comienzan con 'g', 'h' o 'i'
+AR = [w for w in flatten if re.search(r'^[ghi]', w)]
+En este ejemplo, creamos un arreglo donde filtramos palabras que empiezan con una letra ubicada entre 'g' y 'i'. Esto se logra definiendo un rango [ghi] como el primer carácter en las palabras seleccionadas en el arreglo.
+
+¿Qué son las clausuras en las expresiones regulares?
+Las clausuras especifican el número de repeticiones permitidas para un patrón dado:
+
+*: Permite que un patrón se repita cero o más veces.
+
+# Ejemplo: Patrones que pueden aparecer cero o más veces
+AR = [w for w in flatten if re.search(r'^no*', w)]
++: Requiere que un patrón se repita al menos una vez.
+
+# Ejemplo: Patrones que deben aparecer al menos una vez
+AR = [w for w in flatten if re.search(r'^no+', w)]
+Cómo seguir aprendiendo sobre expresiones regulares
+¡Esto es solo el comienzo! Las expresiones regulares son una herramienta impresionante para aquellos apasionados por la computación y el análisis lingüístico. A medida que avances, podrás explorar cómo definir tokenizadores usando estas técnicas, ayudando a estructurar texto de manera más eficiente. No dudes en experimentar y seguir practicando para dominar su uso. Tu viaje en el ámbito del procesamiento de lenguaje natural será increíblemente enriquecedor. ¡Adelante!
+
+
+# otro ejemplo
+
+arr = [w for w in flatten if re.search("^(no)*", w)]
+print(arr[:20])
+
+
+## Tokenización de Texto con Expresiones Regulares en Python
+
+¿Cómo usar expresiones regulares para definir algoritmos de tokenización en Python?
+Las expresiones regulares son una herramienta poderosa que nos permite manipular texto de manera eficiente. En particular, cuando se trata de procesar lenguaje natural, podemos utilizarlas para definir algoritmos de tokenización en Python. En esta clase, exploraremos cómo aprovechar las expresiones regulares con la librería NLTK para tokenizar texto y limpiar nuestro corpus para análisis.
+
+¿Qué es una cadena de texto RAW y cómo se utiliza?
+Para que Python interprete una cadena de texto sin reconocer caracteres especiales, debemos utilizar el prefijo r delante de la cadena. Esto indica que Python debe tratar los caracteres especiales como texto plano, también conocido como texto "RAW".
+
+Por ejemplo:
+
+print(r"Esta es una cadena con una nueva línea \n que será mostrada tal cual.")
+El uso de la r convierte a los caracteres especiales en parte del texto y no en comandos ejecutables dentro de la cadena, lo que es esencial cuando tratamos con texto que incluye caracteres de escape.
+
+¿Cómo tokenizar texto con espacios vacíos?
+Tokenizar texto es el proceso de dividirlo en unidades más pequeñas, conocidas como "tokens". El método más básico de tokenización es mediante la separación por espacios vacíos, y esto se puede lograr fácilmente utilizando la función split de la librería re.
+
+import re
+
+texto = "Cuando sea el rey del mundo, (imaginaba él en su cabeza) no tendré que preocuparme por estas bobadas."
+tokens = re.split(r'\s+', texto)
+Aquí, el uso de \s+ permite dividir el texto en base a uno o más espacios vacíos, creando tokens individuales para cada palabra.
+
+¿Cómo mejorar la tokenización con expresiones regulares?
+Para lograr un nivel de tokenización más sofisticado, podemos desarrollar expresiones regulares que filtren caracteres especiales no deseados.
+
+Consideremos la siguiente expresión regular:
+
+tokens = re.split(r'[ \t\n]+', texto)
+Esta expresión busca espacios, tabulaciones y nuevas líneas, proporcionando una tokenización más limpia al eliminar estos caracteres del proceso.
+
+¿Cómo crear un tokenizador sofisticado con NLTK?
+A medida que los textos se vuelven más complejos, con caracteres y símbolos especiales, las expresiones regulares básicas no son suficientes. Aquí es donde NLTK ofrece una excelente solución con la función RegexpTokenizer.
+
+Una aplicación avanzada de esta técnica se puede ver como sigue:
+
+from nltk.tokenize import RegexpTokenizer
+
+pattern = r'\b\w+\b'
+tokenizer = RegexpTokenizer(pattern)
+tokens = tokenizer.tokenize(texto)
+El patrón \b\w+\b permite capturar palabras completas, evitando caracteres que no contribuyen al contenido semántico del texto.
+
+¿Por qué usar Regex Token Eyes de NLTK?
+Cuando enfrentamos textos altamente complejos, con abreviaciones, números decimales y otros elementos, Regex Token Eyes de NLTK se convierte en un recurso inestimable. Este tokenizador emplea expresiones regulares complejas para lograr una tokenización precisa.
+
+from nltk.tokenize import RegexpTokenizer
+
+pattern = r"\b\w+\b(?:[.\-]\w+)*"
+tokenizer = RegexpTokenizer(pattern)
+tokens = tokenizer.tokenize("En los EE.UU., esa postal vale quince cincuenta dólares...")
+Así, podemos capturar correctamente acrónimos, precios y otros casos especiales como tokens únicos, mejorando significativamente la calidad del análisis.
+
+Con herramientas como estas, estás en capacidad de construir un tokenizador tanto básico como avanzado para diversas aplicaciones en procesamiento de lenguaje natural. ¡Sigue explorando y sorprendiendo al mundo con tus habilidades en Python!
+
+
+## ¿Cómo utilizar la estadística en el procesamiento del lenguaje natural?
+El procesamiento del lenguaje natural (NLP, por sus siglas en inglés) es un campo fascinante que combina la informática, la inteligencia artificial y la lingüística computacional para entender e interpretar el lenguaje humano. Un elemento clave en este proceso es el uso de la estadística para analizar textos y extraer información valiosa. En este artículo, profundizaremos en cómo las herramientas estadísticas se aplican en NLP para enriquecer nuestra comprensión del lenguaje.
+
+¿Qué herramientas y librerías son esenciales para el análisis estadístico en texto?
+Para un análisis estadístico efectivo en NLP usando Python, se necesitan varias librerías y herramientas cruciales. Aquí te presento algunas de las más destacadas:
+
+NLTK (Natural Language Toolkit): Es una de las librerías más utilizadas para trabajar con lenguaje natural en Python. Proporciona herramientas para tokenización, etiquetado, análisis de texto y más.
+
+Matplotlib: Esta es una librería de visualización de datos en Python que es muy útil para presentar gráficos y distribuciones.
+
+NumPy: Una librería fundamental cuando se trabaja con álgebra lineal y matemáticas avanzadas en Python. Es esencial para el manejo eficiente de matrices y vectores. Existen cursos dedicados a profundizar en su uso.
+
+Además, es frecuente trabajar con datasets preexistentes, como el books dataset de NLTK, que contiene libros tokenizados en inglés, siendo uno de los más útiles para procesamiento de texto.
+
+¿Cómo comenzar a tokenizar y calcular métricas del texto?
+Cuando se trabaja con textos, un paso inicial crítico es la tokenización, es decir, dividir el texto en palabras o tokens individuales. Una vez tokenizado, se pueden calcular métricas útiles que nos proporcionan información sobre el texto, como la longitud del texto y la riqueza léxica.
+
+Tokenización: Con NLTK, puedes fácilmente importar datasets y comenzar a tokenizar. Por ejemplo, usando from nltk import book y luego consultando los tokens específicos para un texto.
+from nltk.book import *
+tokens = text1[:10]  # Obtén los primeros 10 tokens
+Longitud y riqueza léxica: La longitud del texto se refiere al número total de tokens, mientras que la riqueza léxica se define como el número de palabras únicas dividido por el total de palabras.
+longitud_texto = len(text1)
+vocabulario = set(text1)
+riqueza_lexica = len(vocabulario) / longitud_texto
+¿Cómo definir funciones útiles para el análisis de texto?
+Definir funciones en Python facilita la reutilización del código y permite calcular métricas como la riqueza léxica y el porcentaje de uso de palabras. Veamos cómo definir algunas funciones útiles:
+
+Función para calcular riqueza léxica:
+def riqueza_lexica(texto):
+    vocabulario = set(texto)
+    return len(vocabulario) / len(texto)
+Esta función nos ayuda a calcular qué tan diverso es el vocabulario del texto.
+
+Función para calcular el porcentaje de una palabra:
+def porcentaje_palabra(palabra, texto):
+    return 100 * texto.count(palabra) / len(texto)
+Utilizando esta función, podemos determinar qué tan común es una palabra en particular dentro de un texto, expresado como un porcentaje.
+
+En conclusión, el uso de herramientas estadísticas en NLP es esencial para el análisis y comprensión profunda de textos. Estas técnicas nos permiten desentrañar patrones del lenguaje y realizar interpretaciones que de otra manera no serían posibles. Con práctica y curiosidad, podrás sacar el máximo provecho a estas herramientas y funciones para tus futuros proyectos en procesamiento del lenguaje natural.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Siguiente recomendado: 
+
+Curso de introducción a Machine learning. 
+Curso de expresiones regulares
+
